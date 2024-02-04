@@ -11,24 +11,38 @@ body {
   position: relative;
 }
 
+#cake {
+  width: 300px; /* Задайте размер торта по вашему желанию */
+}
+
 #candle {
   position: absolute;
-  bottom: 100px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
-  height: 200px;
+  height: 150px;
   background-color: #ffcc00;
   border-radius: 5px;
 }
 
 #flame {
   position: absolute;
-  bottom: 295px;
+  bottom: 170px;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
-  height: 40px;
+  height: 60px;
   background: conic-gradient(from 180deg at 50% 100%, #ffcc00 20%, #ff9900 50%, #ffcc00 80%);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
+  animation: flameAnimation 1s infinite alternate;
+}
+
+@keyframes flameAnimation {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1.2);
+  }
 }
